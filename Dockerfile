@@ -30,7 +30,7 @@ RUN apk add --update --no-cache \
   &&  rm -rf /var/lib/apt/lists/*
 
 # Install ansible.
-RUN pip install ansible
+RUN pip install ansible==2.3.2.0
 
 # Install ansistrano.
 RUN ansible-galaxy install carlosbuenosvinos.ansistrano-deploy carlosbuenosvinos.ansistrano-rollback
