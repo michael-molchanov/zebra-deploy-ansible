@@ -15,6 +15,8 @@ RUN apk add --update --no-cache \
   build-base \
   curl \
   git \
+  groff \
+  less \
   libffi \
   libffi-dev \
   mysql-client \
@@ -30,7 +32,7 @@ RUN apk add --update --no-cache \
   &&  rm -rf /var/lib/apt/lists/*
 
 # Install ansible.
-RUN pip install ansible==2.3.2.0
+RUN pip install ansible==2.3.2.0 awscli s3cmd python-magic
 
 # Install ansistrano.
 RUN ansible-galaxy install carlosbuenosvinos.ansistrano-deploy carlosbuenosvinos.ansistrano-rollback
